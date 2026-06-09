@@ -20,23 +20,28 @@ DOCUMENT_FILES = [
 ]
 
 # === Modelo de Embedding ===
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 EMBEDDING_DIMENSIONS = 384
 
 # === Parâmetros de Chunking ===
 # Estratégia: chunking semântico por seção markdown (H2/H3)
 # Justificativa (exercício 1.1): perguntas de política/regra exigem
-# chunks médios (~400-500 tokens) por seção semântica, com overlap
+# chunks médios (~600 tokens) por seção semântica, com overlap
 # de 15-20% para não perder contexto nas fronteiras.
-CHUNK_SIZE = 800  # ~400-500 tokens para português (0.62 palavras/token)
-CHUNK_OVERLAP = 150  # ~15-20% de overlap (~75-100 tokens)
+# Ajuste v4: chunking por seção markdown (H2/H3) como unidade atômica.
+# Seções inteiras são mantidas juntas. Apenas seções muito longas
+# (>MAX_SECTION_SIZE) são subdivididas internamente.
+CHUNK_SIZE = 800  # Usado apenas para subdividir seções muito longas
+CHUNK_OVERLAP = 150  # Overlap apenas em subdivisões
+MAX_SECTION_SIZE = 1200  # Seções até esse tamanho são mantidas inteiras
 CHUNK_SEPARATORS = ["\n## ", "\n### ", "\n\n", "\n"]
 
 # === ChromaDB ===
 COLLECTION_NAME = "novatech_docs"
 
 # === Retrieval ===
-DEFAULT_TOP_K = 5  # Máximo de chunks por query (regra do system prompt v2)
+DEFAULT_TOP_K = 6  # Chunks finais retornados ao prompt
+RETRIEVAL_CANDIDATES = 12  # Candidatos recuperados antes do reranking/boost
 MIN_RELEVANCE_SCORE = 0.65  # Threshold mínimo (regra do orchestrator no system prompt v2)
 MAX_CHUNKS_TOKENS = 1200  # Orçamento de tokens para chunks no prompt
 
