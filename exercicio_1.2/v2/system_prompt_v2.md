@@ -183,6 +183,20 @@ Nunca generalize para cobrir exceções não documentadas.
 
 </extended_rules>
 
+<conversation_history>
+<!--
+  INSTRUÇÃO PARA O ORCHESTRATOR:
+  - Inclua apenas as últimas 4 trocas (user + assistant).
+  - Se for a primeira pergunta do chamado, omita esta tag inteira.
+  - Orçamento: 400 tokens. Remover turnos mais antigos primeiro.
+  - Posicionado no meio do contexto intencionalmente: é contexto
+    de apoio, não evidência primária da resposta.
+-->
+
+{CONVERSATION_HISTORY}
+
+</conversation_history>
+
 <chunk_instructions>
 
 ## Como Usar os Chunks Abaixo
@@ -220,12 +234,54 @@ peso na síntese — não trate todos os chunks como equivalentes.
 ---
 
 <document_context>
+<!--
+  INSTRUÇÃO PARA O ORCHESTRATOR RAG:
+  - Injete os chunks recuperados para a query atual.
+  - Máximo: 5 chunks. Orçamento: 1.200 tokens.
+  - Descartar chunks com score < 0.65.
+  - ORDEM DE INJEÇÃO: chunk de maior score PRIMEIRO,
+    segundo maior score POR ÚLTIMO, demais no meio.
+    Isso mitiga o efeito lost-in-the-middle dentro do bloco.
+  - Se retrieval retornar 0 resultados, injete:
+    [NENHUM DOCUMENTO RECUPERADO PARA ESTA QUERY]
+  - Formato por chunk:
 
-Chunk A: "Política de Devolução POL-001, seção 3.2: Mercadorias podem ser devolvidas em até 7 dias úteis após o recebimento, exceto cargas classificadas como perigosas (classes 1 a 6 da ANTT). O cliente deve abrir chamado no portal e anexar fotos da mercadoria."
-Chunk B: "Tabela SLA-2024: Cliente Gold — resposta em até 2h, resolução em até 24h. Cliente Silver — resposta em até 4h, resolução em até 48h. Cliente Standard — resposta em até 8h, resolução em até 72h."
-Chunk C: "PROC-042-v2, seção 2: Frete especial para cargas acima de 500kg: valor base × multiplicador regional. Região Sul: 1.3. Região Sudeste: 1.1. Região Norte: 1.8. Região Nordeste: 1.5. Região Centro-Oeste: 1.4."
+  [CHUNK {n} de {total}]
+  Documento  : {código} — {título}
+  Versão     : {versão ou data}
+  Seção      : {seção específica}
+  Extraído em: {data de extração}
+  Relevância : {score de similaridade}
+  Conteúdo   :
+  {texto do chunk}
+  ---
+-->
+
+{CHUNKS_RECUPERADOS}
 
 </document_context>
+
+---
+
+<ticket_data>
+<!--
+  INSTRUÇÃO PARA O ORCHESTRATOR:
+  - Injete os metadados do chamado.
+  - {USER_QUERY} deve ser o último campo — é o elemento mais
+    importante e deve estar o mais próximo possível da geração.
+  - Se um campo não estiver disponível, use "N/I".
+-->
+
+Número do Chamado : {TICKET_ID}
+Tipo de Cliente   : {CUSTOMER_TIER}
+Região do Cliente : {CUSTOMER_REGION}
+Categoria         : {TICKET_CATEGORY}
+Data/Hora         : {TIMESTAMP}
+
+Pergunta do atendente:
+{USER_QUERY}
+
+</ticket_data>
 
 ---
 
