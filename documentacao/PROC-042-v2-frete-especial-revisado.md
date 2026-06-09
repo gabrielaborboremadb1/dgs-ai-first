@@ -16,19 +16,20 @@ O frete especial é calculado como:
 Valor do frete = Valor base × Multiplicador regional × Fator de peso
 
 Onde:
+
 - Valor base = tarifa publicada na tabela mensal de fretes.
 - Multiplicador regional = fator aplicado conforme a região de destino (seção 2.1).
 - Fator de peso = 1.0 para cargas de 500kg a 1.000kg; 1.15 para cargas de 1.001kg a 3.000kg; 1.4 para cargas acima de 3.000kg.
 
 ### 2.1. Multiplicadores regionais (atualizados em novembro/2023)
 
-| Região | Multiplicador |
-|--------|--------------|
-| Sul | 1.3 |
-| Sudeste | 1.1 |
-| Centro-Oeste | 1.4 |
-| Nordeste | 1.5 |
-| Norte | 1.8 |
+| Região       | Multiplicador |
+| ------------ | ------------- |
+| Sul          | 1.3           |
+| Sudeste      | 1.1           |
+| Centro-Oeste | 1.4           |
+| Nordeste     | 1.5           |
+| Norte        | 1.8           |
 
 ## 3. Prazo de entrega para frete especial
 

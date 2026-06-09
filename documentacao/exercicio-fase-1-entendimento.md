@@ -1,18 +1,21 @@
 # Cenário-Âncora 1 — Fase de Entendimento e Contexto
 
 ## Tópicos cobertos
+
 - Fundamentos de IA Generativa
 - Engenharia de Prompt
 - Engenharia de Contexto
 - RAG (Retrieval-Augmented Generation)
 
 ## Ferramentas disponíveis para os participantes
+
 - **Claude** (chat) — todos os papéis
 - **GitHub Copilot** — desenvolvedores e Tech Lead
 - **Claude Cowork** — Delivery Manager, Product Specialist, QA
 - **Claude Design** — Product Specialist
 
 ## Documentos de apoio
+
 - **Anexo A — Documentação Simulada da NovaTech:** Contém o conteúdo completo dos 5 documentos-chave da NovaTech (POL-001, PROC-042, PROC-042-v2, SLA-2024, FAQ-Atendimento). É a fonte de verdade para todos os exercícios que pedem avaliação de respostas ou análise de documentação.
 - **Anexo B — Chunks de Referência do Pipeline de RAG:** Contém os chunks que o pipeline de RAG extrairia dos documentos do Anexo A, com mapa de cobertura (pergunta → chunks esperados). Use nos exercícios que envolvem teste de prompts ou avaliação de retrieval.
 
@@ -52,17 +55,19 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo acima.
 - Uma tabela resumo dos tipos de documento da NovaTech:
 
-| Fonte | Qtde docs | Formato | Atualização | Responsável |
-|-------|-----------|---------|-------------|-------------|
-| SharePoint | ~800 | PDF, DOCX | Mensal | Operações, Compliance |
-| Confluence | ~400 páginas | HTML/Wiki | Semanal | TI, Comercial |
-| Pasta de rede | ~50 planilhas | XLSX | Mensal | Comercial |
+| Fonte         | Qtde docs     | Formato   | Atualização | Responsável           |
+| ------------- | ------------- | --------- | ----------- | --------------------- |
+| SharePoint    | ~800          | PDF, DOCX | Mensal      | Operações, Compliance |
+| Confluence    | ~400 páginas  | HTML/Wiki | Semanal     | TI, Comercial         |
+| Pasta de rede | ~50 planilhas | XLSX      | Mensal      | Comercial             |
 
 **Tarefa:**
-1. Usando o **Claude**, elabore um documento de 1-2 páginas contendo uma avaliação dos riscos do projeto relacionados às características da IA generativa. Forneça ao Claude o cenário completo e peça ajuda para identificar riscos. Considere ao menos: o risco de alucinação (o assistente inventar procedimentos que não existem), o impacto de documentação contraditória nas respostas, a dependência da qualidade dos documentos-fonte, a expectativa da diretoria versus o que a tecnologia realmente entrega hoje, e o risco de degradação de qualidade quando o contexto do modelo fica muito grande (*context rot*).
+
+1. Usando o **Claude**, elabore um documento de 1-2 páginas contendo uma avaliação dos riscos do projeto relacionados às características da IA generativa. Forneça ao Claude o cenário completo e peça ajuda para identificar riscos. Considere ao menos: o risco de alucinação (o assistente inventar procedimentos que não existem), o impacto de documentação contraditória nas respostas, a dependência da qualidade dos documentos-fonte, a expectativa da diretoria versus o que a tecnologia realmente entrega hoje, e o risco de degradação de qualidade quando o contexto do modelo fica muito grande (_context rot_).
 
 2. Para cada risco, refine com o Claude: probabilidade (alta/média/baixa), impacto no projeto (prazo, custo, qualidade), e uma ação de mitigação concreta.
 
@@ -71,6 +76,7 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Entregável:** O documento final E o histórico da conversa com o Claude (prints ou export), demonstrando como você usou a ferramenta e como refinou o output.
 
 **Critérios de avaliação:**
+
 - Os riscos demonstram compreensão real das limitações de LLMs (não são genéricos como "a IA pode errar"). Exemplo de risco bem formulado: "documentos contraditórios entre PROC-042 e PROC-042-v2 podem gerar respostas que misturam regras de versões diferentes sem que o atendente perceba".
 - Ao menos um risco aborda contexto: o impacto do volume de documentação (~1.250 fontes) na qualidade das respostas (context rot, orçamento de atenção limitado do modelo).
 - As mitigações são acionáveis, não apenas "monitorar" ou "ficar atento". Exemplo: "implementar versionamento explícito com data de vigência no pipeline de ingestão e instruir o modelo a priorizar a versão mais recente".
@@ -86,10 +92,12 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Ferramentas a utilizar:** Claude (chat) + Claude Cowork
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- Um e-mail fictício do diretor de operações da NovaTech: *"Estamos animados com o projeto. Nosso CEO viu uma demo do Copilot e quer algo parecido. A expectativa é que em 3 meses nosso time de atendimento não precise mais procurar nada manualmente. O assistente vai saber tudo."*
+- Um e-mail fictício do diretor de operações da NovaTech: _"Estamos animados com o projeto. Nosso CEO viu uma demo do Copilot e quer algo parecido. A expectativa é que em 3 meses nosso time de atendimento não precise mais procurar nada manualmente. O assistente vai saber tudo."_
 
 **Tarefa:**
+
 1. Usando o **Claude**, elabore o rascunho de um e-mail de resposta ao diretor que: valide o entusiasmo, explique em linguagem não-técnica por que um assistente de IA não "sabe tudo" (usando o conceito de respostas probabilísticas), explique o que é RAG e por que a qualidade depende da documentação-fonte, e proponha 2-3 critérios de sucesso mensuráveis.
 
 2. Usando o **Claude Cowork**, crie um one-pager visual (documento de 1 página) que possa ser anexado ao e-mail, mostrando: como o assistente funciona (fluxo simplificado pergunta → busca → resposta com fonte), o que ele faz bem, o que ele não faz, e os critérios de sucesso propostos.
@@ -97,6 +105,7 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Entregável:** O e-mail redigido, o one-pager gerado pelo Cowork, e evidência do uso das ferramentas.
 
 **Critérios de avaliação:**
+
 - O e-mail usa analogias ou linguagem acessível, não jargão técnico.
 - A explicação de RAG é precisa sem ser acadêmica.
 - Os critérios de sucesso são mensuráveis e derivam de entendimento real da tecnologia (ex: "% de respostas com citação de fonte verificável" é bom; "o assistente funcionar bem" é ruim).
@@ -111,10 +120,12 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Ferramentas a utilizar:** Claude (chat) + Claude Cowork
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- Uma descrição resumida da fase de Intent do AI First SDLC: *"Antes de entrevistas com stakeholders, agentes especializados analisam documentação existente, contexto de negócio e restrições para gerar um mapa priorizado de fontes, dependências e gaps."*
+- Uma descrição resumida da fase de Intent do AI First SDLC: _"Antes de entrevistas com stakeholders, agentes especializados analisam documentação existente, contexto de negócio e restrições para gerar um mapa priorizado de fontes, dependências e gaps."_
 
 **Tarefa:**
+
 1. Usando o **Claude**, elabore um plano de discovery que defina: quais atividades serão feitas por agentes de IA na fase de Intent (ex: catalogar os 800 documentos do SharePoint, identificar documentos duplicados ou contraditórios, mapear temas mais frequentes), quais atividades serão feitas por humanos no discovery (entrevistas, validação, priorização), e a sequência (o que precisa acontecer antes do quê).
 
 2. Usando o **Claude Cowork**, transforme o plano em um cronograma visual de 2 semanas de discovery, com atividades, responsáveis e dependências.
@@ -124,6 +135,7 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Entregável:** O plano textual, o cronograma visual gerado pelo Cowork, e evidência do uso das ferramentas.
 
 **Critérios de avaliação:**
+
 - O plano demonstra entendimento de que Intent antecede e alimenta o discovery humano.
 - As atividades atribuídas a agentes são realistas (coisas que IA faz bem: catalogar, comparar, resumir).
 - As atividades humanas focam no que IA não faz bem (validar, priorizar, decidir).
@@ -140,16 +152,18 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo.
 - Os 5 documentos-chave da NovaTech com conteúdo completo (ver **Anexo A** — para a etapa 2, os documentos individuais estão disponíveis na pasta `anexo-a-documentos-individuais/`):
-  1. *"POL-001: Política de Devolução de Mercadorias"* — Define regras para devolução em até 7 dias, com exceções para carga perigosa.
-  2. *"PROC-042: Procedimento de Cálculo de Frete Especial"* — Fórmula para fretes acima de 500kg com tabela de multiplicadores por região.
-  3. *"SLA-2024: Tabela de SLA por Tipo de Cliente"* — Prazos de resposta diferenciados para clientes Gold, Silver e Standard.
-  4. *"PROC-042-v2: Procedimento de Cálculo de Frete (Revisado)"* — Mesma numeração do item 2, mas com multiplicadores diferentes. Sem indicação de qual é o vigente.
-  5. *"FAQ-Atendimento: Perguntas Frequentes do Time de Suporte"* — Documento informal com 47 perguntas e respostas escritas por atendentes experientes, sem validação formal.
-- Conceito de engenharia de contexto: *"Prompt engineering é como pedir. Context engineering é decidir o que o modelo vê antes de responder. Inclui: orçamento de atenção (modelos têm capacidade limitada — informação em excesso degrada a qualidade), progressive disclosure (alimentar o modelo em etapas, não tudo de uma vez), e priorização (colocar a informação mais relevante no início do contexto)."*
+  1. _"POL-001: Política de Devolução de Mercadorias"_ — Define regras para devolução em até 7 dias, com exceções para carga perigosa.
+  2. _"PROC-042: Procedimento de Cálculo de Frete Especial"_ — Fórmula para fretes acima de 500kg com tabela de multiplicadores por região.
+  3. _"SLA-2024: Tabela de SLA por Tipo de Cliente"_ — Prazos de resposta diferenciados para clientes Gold, Silver e Standard.
+  4. _"PROC-042-v2: Procedimento de Cálculo de Frete (Revisado)"_ — Mesma numeração do item 2, mas com multiplicadores diferentes. Sem indicação de qual é o vigente.
+  5. _"FAQ-Atendimento: Perguntas Frequentes do Time de Suporte"_ — Documento informal com 47 perguntas e respostas escritas por atendentes experientes, sem validação formal.
+- Conceito de engenharia de contexto: _"Prompt engineering é como pedir. Context engineering é decidir o que o modelo vê antes de responder. Inclui: orçamento de atenção (modelos têm capacidade limitada — informação em excesso degrada a qualidade), progressive disclosure (alimentar o modelo em etapas, não tudo de uma vez), e priorização (colocar a informação mais relevante no início do contexto)."_
 
 **Tarefa:**
+
 1. No **Claude**, projete e execute uma estratégia de análise em 3 etapas, usando engenharia de contexto:
    - **Etapa 1 — Visão geral:** Forneça ao Claude apenas os títulos, metadados e resumos dos 5 documentos (não o conteúdo completo). Peça um mapa de temas cobertos e hipóteses de gaps.
    - **Etapa 2 — Análise profunda:** Com base no mapa da etapa 1, selecione os 2 documentos que mais precisam de análise (ex: os dois PROC-042 contraditórios). Forneça o conteúdo completo apenas desses 2 e peça análise de inconsistências.
@@ -164,6 +178,7 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Entregável:** A estratégia de contexto documentada, os 3 prompts com outputs, a análise crítica de cada etapa, a reflexão sobre progressive disclosure, e o mapa de riscos.
 
 **Critérios de avaliação:**
+
 - A estratégia de 3 etapas demonstra progressive disclosure (não joga tudo de uma vez).
 - A escolha de quais documentos analisar em profundidade na etapa 2 é justificada.
 - A reflexão sobre "tudo de uma vez vs. progressivo" demonstra compreensão de orçamento de atenção e context rot.
@@ -178,10 +193,12 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Ferramentas a utilizar:** Claude (chat) + Claude Design
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- Dados do discovery (simulados): *"Os atendentes hoje abrem em média 4 fontes diferentes por chamado. As dúvidas mais comuns são sobre prazos de entrega (35%), regras de frete (25%), política de devolução (20%) e outros (20%). Em 15% dos casos, o atendente não encontra resposta e escala para o supervisor."*
+- Dados do discovery (simulados): _"Os atendentes hoje abrem em média 4 fontes diferentes por chamado. As dúvidas mais comuns são sobre prazos de entrega (35%), regras de frete (25%), política de devolução (20%) e outros (20%). Em 15% dos casos, o atendente não encontra resposta e escala para o supervisor."_
 
 **Tarefa:**
+
 1. Usando o **Claude**, elabore a jornada do atendente em formato de texto estruturado, incluindo:
    - O fluxo principal: atendente recebe dúvida → consulta o assistente → recebe resposta com fonte → usa no atendimento.
    - O fluxo de fallback: o que acontece quando o assistente não tem confiança na resposta ou quando o atendente discorda.
@@ -193,6 +210,7 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Entregável:** A jornada textual, o diagrama visual gerado pelo Claude Design, e evidência do uso das ferramentas.
 
 **Critérios de avaliação:**
+
 - A jornada inclui o caminho feliz E os caminhos de exceção.
 - Os guardrails são específicos ao domínio (logística/atendimento), não genéricos.
 - O fluxo de feedback mostra entendimento de que RAG precisa de manutenção contínua (feedback loop).
@@ -207,10 +225,11 @@ A NovaTech contratou a DB1 para construir um assistente de IA que permita aos at
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo.
 - Dados do discovery.
 - A documentação da NovaTech (ver **Anexo A**) como exemplo concreto das contradições e gaps que a spec precisa endereçar.
-- Uma explicação simplificada do pipeline de RAG: *"Documentos são divididos em pedaços (chunks), transformados em representações numéricas (embeddings), armazenados num banco vetorial, e recuperados por similaridade quando o usuário faz uma pergunta. O LLM então gera uma resposta usando os chunks recuperados como contexto."*
+- Uma explicação simplificada do pipeline de RAG: _"Documentos são divididos em pedaços (chunks), transformados em representações numéricas (embeddings), armazenados num banco vetorial, e recuperados por similaridade quando o usuário faz uma pergunta. O LLM então gera uma resposta usando os chunks recuperados como contexto."_
 
 **Tarefa:**
 Usando o **Claude**, escreva uma especificação de requisitos do produto (não técnica, mas precisa) que cubra:
@@ -226,6 +245,7 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Entregável:** A especificação final e o histórico de iteração com o Claude mostrando a versão inicial, o feedback do Claude e a versão refinada.
 
 **Critérios de avaliação:**
+
 - Os requisitos demonstram entendimento de que a qualidade do RAG depende da curadoria dos dados, não só da tecnologia.
 - O tratamento de contradições e ausência de resposta mostra maturidade de produto.
 - Os requisitos são testáveis (o QA conseguiria verificar cada um).
@@ -242,26 +262,29 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- Informações técnicas adicionais: *"Os PDFs do SharePoint incluem documentos com tabelas complexas (tabelas de frete com 15+ colunas), fluxogramas embutidos como imagens, e alguns documentos escaneados (OCR necessário). A wiki do Confluence tem links internos entre páginas e usa macros customizadas. As planilhas têm fórmulas interdependentes."*
-- Conceito de context engineering aplicado a RAG: *"O contexto que o LLM recebe a cada pergunta é limitado pela janela de contexto do modelo. A qualidade da resposta depende de: quais chunks são selecionados (relevância), quantos chunks cabem no contexto (orçamento de atenção), onde ficam posicionados no prompt (informação no meio de contextos longos é 'esquecida' — o efeito 'lost in the middle'), e o que mais está no contexto competindo por atenção (system prompt, histórico de conversa, instruções)."*
+- Informações técnicas adicionais: _"Os PDFs do SharePoint incluem documentos com tabelas complexas (tabelas de frete com 15+ colunas), fluxogramas embutidos como imagens, e alguns documentos escaneados (OCR necessário). A wiki do Confluence tem links internos entre páginas e usa macros customizadas. As planilhas têm fórmulas interdependentes."_
+- Conceito de context engineering aplicado a RAG: _"O contexto que o LLM recebe a cada pergunta é limitado pela janela de contexto do modelo. A qualidade da resposta depende de: quais chunks são selecionados (relevância), quantos chunks cabem no contexto (orçamento de atenção), onde ficam posicionados no prompt (informação no meio de contextos longos é 'esquecida' — o efeito 'lost in the middle'), e o que mais está no contexto competindo por atenção (system prompt, histórico de conversa, instruções)."_
 
 **Tarefa:**
+
 1. Usando o **Claude**, produza uma análise técnica que cubra:
    - Para cada tipo de fonte (PDFs com tabelas, PDFs escaneados, wiki com links, planilhas com fórmulas): qual o desafio para o pipeline de RAG, como isso afeta a qualidade das respostas, e uma estratégia de tratamento.
    - Estimativa do tamanho aproximado da base em tokens considerando ~800 documentos PDF (média de 10 páginas cada), ~400 páginas wiki (média de 1.500 palavras cada), e ~50 planilhas. Use a regra prática de ~0.75 palavras por token.
    - Análise de orçamento de contexto: dado que o GPT-4o tem 128K tokens de janela e o system prompt + instruções consomem ~2K tokens, quantos chunks de ~500 tokens cabem em cada query? Como isso afeta a estratégia de chunking e retrieval?
-   - Recomendação de estratégia de chunking justificada pelo tipo de pergunta que o usuário fará e pelo conceito de *lost in the middle*.
+   - Recomendação de estratégia de chunking justificada pelo tipo de pergunta que o usuário fará e pelo conceito de _lost in the middle_.
 
 2. Peça ao **Claude** que revise sua análise: forneça o documento e peça que identifique pontos fracos, estimativas otimistas demais ou riscos que você não considerou. Incorpore o feedback.
 
 **Entregável:** A análise técnica final e o histórico de iteração com o Claude.
 
 **Critérios de avaliação:**
+
 - A análise demonstra entendimento de que diferentes tipos de conteúdo exigem diferentes estratégias de extração e chunking.
 - A estimativa de tokens é razoável e mostra compreensão prática do conceito.
 - A análise de orçamento de contexto demonstra compreensão de que context window é um recurso limitado que precisa ser gerenciado (não é "quanto maior melhor").
-- A estratégia de chunking é justificada pelo tipo de pergunta e considera o efeito *lost in the middle*.
+- A estratégia de chunking é justificada pelo tipo de pergunta e considera o efeito _lost in the middle_.
 - A iteração com o Claude melhorou o documento de forma verificável.
 
 ---
@@ -273,15 +296,17 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Ferramentas a utilizar:** Claude (chat) — o próprio Claude serve como ambiente de teste do prompt
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- Guardrails definidos pelo Product Specialist: *"O assistente deve (1) sempre citar a fonte do documento, (2) nunca inventar prazos ou valores que não estejam na documentação, (3) quando não encontrar resposta, dizer explicitamente que não encontrou e sugerir escalar para o supervisor, (4) responder em português formal mas acessível."*
+- Guardrails definidos pelo Product Specialist: _"O assistente deve (1) sempre citar a fonte do documento, (2) nunca inventar prazos ou valores que não estejam na documentação, (3) quando não encontrar resposta, dizer explicitamente que não encontrou e sugerir escalar para o supervisor, (4) responder em português formal mas acessível."_
 - 3 chunks simulados de documentação (extraídos do **Anexo B** — o Anexo B contém o conjunto completo de chunks e o mapa de cobertura para validação):
-  - Chunk A: *"Política de Devolução POL-001, seção 3.2: Mercadorias podem ser devolvidas em até 7 dias úteis após o recebimento, exceto cargas classificadas como perigosas (classes 1 a 6 da ANTT). O cliente deve abrir chamado no portal e anexar fotos da mercadoria."*
-  - Chunk B: *"Tabela SLA-2024: Cliente Gold — resposta em até 2h, resolução em até 24h. Cliente Silver — resposta em até 4h, resolução em até 48h. Cliente Standard — resposta em até 8h, resolução em até 72h."*
-  - Chunk C: *"PROC-042-v2, seção 2: Frete especial para cargas acima de 500kg: valor base × multiplicador regional. Região Sul: 1.3. Região Sudeste: 1.1. Região Norte: 1.8. Região Nordeste: 1.5. Região Centro-Oeste: 1.4."*
-- Conceito de contexto estático vs dinâmico: *"Em um prompt de produção, algumas partes são estáticas (system prompt, guardrails — raramente mudam) e outras são dinâmicas (chunks recuperados, dados do cliente, histórico da conversa — mudam a cada query). A engenharia de contexto decide como essas partes se compõem: em que ordem, com que prioridade, e o que fazer quando o contexto total ultrapassa o orçamento."*
+  - Chunk A: _"Política de Devolução POL-001, seção 3.2: Mercadorias podem ser devolvidas em até 7 dias úteis após o recebimento, exceto cargas classificadas como perigosas (classes 1 a 6 da ANTT). O cliente deve abrir chamado no portal e anexar fotos da mercadoria."_
+  - Chunk B: _"Tabela SLA-2024: Cliente Gold — resposta em até 2h, resolução em até 24h. Cliente Silver — resposta em até 4h, resolução em até 48h. Cliente Standard — resposta em até 8h, resolução em até 72h."_
+  - Chunk C: _"PROC-042-v2, seção 2: Frete especial para cargas acima de 500kg: valor base × multiplicador regional. Região Sul: 1.3. Região Sudeste: 1.1. Região Norte: 1.8. Região Nordeste: 1.5. Região Centro-Oeste: 1.4."_
+- Conceito de contexto estático vs dinâmico: _"Em um prompt de produção, algumas partes são estáticas (system prompt, guardrails — raramente mudam) e outras são dinâmicas (chunks recuperados, dados do cliente, histórico da conversa — mudam a cada query). A engenharia de contexto decide como essas partes se compõem: em que ordem, com que prioridade, e o que fazer quando o contexto total ultrapassa o orçamento."_
 
 **Tarefa:**
+
 1. Escreva um system prompt completo para o assistente, incorporando os guardrails e o contexto do projeto. Organize o prompt em seções claras: identidade, regras, formato de resposta, e instruções para uso dos chunks. Defina explicitamente a ordem de prioridade quando houver conflito entre fontes.
 
 2. Documente a estrutura de contexto do prompt: identifique quais partes são estáticas (vão em toda query) e quais são dinâmicas (mudam por query). Estime o tamanho em tokens de cada parte.
@@ -298,6 +323,7 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Entregável:** O system prompt v1 com mapeamento de contexto estático/dinâmico, as respostas obtidas, a análise crítica, o system prompt v2 (iterado), e as respostas da segunda rodada.
 
 **Critérios de avaliação:**
+
 - O system prompt é específico, com constraints claros (não é genérico como "você é um assistente útil").
 - O mapeamento estático/dinâmico demonstra compreensão de engenharia de contexto (não é apenas "o prompt completo").
 - A análise das falhas demonstra pensamento crítico (ex: para carga perigosa, a resposta correta é que NÃO pode devolver, conforme a exceção do POL-001).
@@ -313,6 +339,7 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Ferramentas a utilizar:** Claude (chat) + GitHub Copilot
 
 **Inputs fornecidos:**
+
 - O cenário completo.
 - Os documentos da NovaTech como arquivos individuais para ingestão (ver **Anexo A**, pasta `anexo-a-documentos-individuais/` — 5 arquivos .md, um por documento, prontos para processamento por scripts).
 - Os chunks de referência (ver **Anexo B**) — use o mapa de cobertura como gabarito para validar se o pipeline recupera os chunks corretos.
@@ -325,6 +352,7 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 - Alternativa: se o participante preferir, pode usar outra stack free (FAISS em vez de ChromaDB, Ollama para embeddings locais, etc). O que importa é que funcione e seja gratuito.
 
 **Tarefa:**
+
 1. Usando o **GitHub Copilot**, implemente um pipeline de RAG mínimo com estas etapas:
    - **Ingestão:** Um script que lê os documentos do Anexo A (como texto), divide em chunks (defina a estratégia de chunking e justifique), gera embeddings, e armazena no ChromaDB.
    - **Busca:** Uma função que recebe uma pergunta, gera o embedding da pergunta, busca os N chunks mais similares no ChromaDB, e retorna os chunks com score de similaridade.
@@ -339,6 +367,7 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Entregável:** O código do pipeline (com evidência do Copilot), os resultados dos 5 testes com análise, e as propostas de correção.
 
 **Critérios de avaliação:**
+
 - O pipeline é funcional: ingere, busca e retorna chunks relevantes (não precisa ser perfeito, mas precisa rodar).
 - A estratégia de chunking é justificada (não é apenas "512 tokens fixos" sem motivo).
 - Os testes usam perguntas realistas do domínio e são comparados com o gabarito do Anexo B.
@@ -356,9 +385,10 @@ Itere com o Claude: apresente a primeira versão e peça ao Claude que identifiq
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- A análise técnica do desenvolvedor (simulada): *"Base estimada em ~12M tokens. PDFs com tabelas complexas são o maior desafio para extração. Documentos escaneados (~15% da base) precisarão de OCR. Documentos contraditórios foram identificados em ao menos 3 procedimentos. Recomendação de chunking por seção com overlap de 10%."*
-- Os requisitos do Product Specialist (simulados): *"Respostas devem citar fonte. Documentos contraditórios devem mostrar ambas as versões com indicação de data. Atualização máxima de 24h após publicação de novo documento. O assistente nunca deve inventar informações."*
+- A análise técnica do desenvolvedor (simulada): _"Base estimada em ~12M tokens. PDFs com tabelas complexas são o maior desafio para extração. Documentos escaneados (~15% da base) precisarão de OCR. Documentos contraditórios foram identificados em ao menos 3 procedimentos. Recomendação de chunking por seção com overlap de 10%."_
+- Os requisitos do Product Specialist (simulados): _"Respostas devem citar fonte. Documentos contraditórios devem mostrar ambas as versões com indicação de data. Atualização máxima de 24h após publicação de novo documento. O assistente nunca deve inventar informações."_
 - Formato de ADR:
   ```
   # ADR-NNNN: [Título da Decisão]
@@ -383,6 +413,7 @@ Usando o **Claude**, produza 4 ADRs independentes, uma para cada decisão abaixo
 **Entregável:** Os 4 ADRs completos no formato especificado e o histórico de "devil's advocate" com o Claude para ao menos 2 das 4 decisões.
 
 **Critérios de avaliação:**
+
 - Cada ADR é independente e autossuficiente (pode ser lido isoladamente).
 - As decisões são fundamentadas em trade-offs explícitos, não em preferência de tecnologia.
 - A ADR-0002 (contexto) demonstra compreensão de engenharia de contexto — context rot, orçamento de atenção, perguntas multi-domínio.
@@ -398,6 +429,7 @@ Usando o **Claude**, produza 4 ADRs independentes, uma para cada decisão abaixo
 **Ferramentas a utilizar:** Claude (chat) + GitHub Copilot
 
 **Inputs fornecidos:**
+
 - O cenário completo.
 - O system prompt prototipado pelo desenvolvedor (simulado — use o prompt abaixo como base para melhorar):
 
@@ -408,10 +440,11 @@ Use apenas as informações dos documentos fornecidos.
 Cite a fonte. Se não souber, diga que não sabe.
 ```
 
-- Os guardrails do Product Specialist: *"(1) Sempre citar fonte. (2) Nunca inventar prazos ou valores. (3) Quando não encontrar resposta, dizer explicitamente. (4) Responder em português formal."*
+- Os guardrails do Product Specialist: _"(1) Sempre citar fonte. (2) Nunca inventar prazos ou valores. (3) Quando não encontrar resposta, dizer explicitamente. (4) Responder em português formal."_
 - Os chunks de referência do pipeline (ver **Anexo B**) para usar como dados de teste no script.
 
 **Tarefa:**
+
 1. Usando o **Claude**, defina: onde os prompts ficam versionados no repositório, como são nomeados, como são testados, e quem pode alterá-los.
 
 2. Identifique quais partes do system prompt são estáticas (raramente mudam) e quais são dinâmicas (mudam conforme o contexto — ex: o tier do cliente, os chunks recuperados). Defina a "anatomia do contexto" completa de uma query: system prompt (estático) + metadados do cliente (dinâmico) + chunks recuperados (dinâmico) + pergunta (dinâmico) + histórico de conversa (dinâmico, crescente). Estime o tamanho de cada parte e defina o orçamento de contexto total.
@@ -423,6 +456,7 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Entregável:** O documento de estratégia com a anatomia de contexto, o script de teste gerado com o Copilot, e a análise de enforcement probabilístico vs determinístico.
 
 **Critérios de avaliação:**
+
 - Os prompts são tratados como código (versionados, testados, revisados).
 - A anatomia de contexto demonstra pensamento de engenharia de contexto (não é apenas "o prompt" — é o contexto completo que o modelo recebe, com orçamento por parte).
 - A separação entre enforcement probabilístico e determinístico demonstra maturidade de engenharia.
@@ -437,10 +471,12 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- A proposta (simulada): *"Vamos usar Azure AI Search com embeddings do ada-002. Todos os documentos serão indexados num único índice. Chunking fixo de 512 tokens sem overlap. O LLM recebe os 3 chunks mais similares. Usaremos GPT-4o para geração. O pipeline de ingestão roda manualmente quando alguém lembra de atualizar."*
+- A proposta (simulada): _"Vamos usar Azure AI Search com embeddings do ada-002. Todos os documentos serão indexados num único índice. Chunking fixo de 512 tokens sem overlap. O LLM recebe os 3 chunks mais similares. Usaremos GPT-4o para geração. O pipeline de ingestão roda manualmente quando alguém lembra de atualizar."_
 
 **Tarefa:**
+
 1. Faça sua própria revisão técnica da proposta: identifique ao menos 4 problemas ou riscos.
 
 2. Em seguida, use o **Claude** para uma segunda revisão: forneça a proposta e peça ao Claude que identifique problemas. Compare a lista do Claude com a sua: o que o Claude encontrou que você não viu? O que você encontrou que o Claude não mencionou?
@@ -452,6 +488,7 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Entregável:** Sua revisão original, a revisão do Claude, a comparação entre as duas, e a proposta reescrita.
 
 **Critérios de avaliação:**
+
 - Os problemas identificados são reais e demonstram compreensão de RAG (ex: chunking fixo sem overlap perde contexto em fronteiras; 3 chunks pode ser insuficiente para perguntas complexas; ingestão manual é um risco operacional).
 - A comparação humano vs Claude é honesta (reconhece onde cada um acertou e errou).
 - A proposta reescrita resolve os problemas sem overengineering.
@@ -468,12 +505,14 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Ferramentas a utilizar:** Claude (chat)
 
 **Inputs fornecidos:**
+
 - O cenário completo.
-- Os guardrails definidos pelo Product Specialist: *"(1) Sempre citar fonte. (2) Nunca inventar prazos ou valores. (3) Quando não encontrar resposta, dizer explicitamente. (4) Responder em português formal."*
-- Uma explicação de alucinação: *"LLMs podem gerar respostas que parecem corretas e confiantes mas são fabricadas. Isso é especialmente perigoso quando o modelo 'preenche lacunas' misturando informação real com inferências não fundamentadas."*
-- Uma explicação de problemas de contexto: *"Além da alucinação, existem falhas ligadas ao gerenciamento de contexto: context rot (em conversas longas, informação fornecida no início é 'esquecida'), lost in the middle (informação no meio de um contexto grande é menos processada que no início ou no fim), chunk errado (o retriever traz um trecho irrelevante ou de versão errada que contamina a resposta), e context overflow (a pergunta + chunks + prompt excedem a janela do modelo, causando truncamento)."*
+- Os guardrails definidos pelo Product Specialist: _"(1) Sempre citar fonte. (2) Nunca inventar prazos ou valores. (3) Quando não encontrar resposta, dizer explicitamente. (4) Responder em português formal."_
+- Uma explicação de alucinação: _"LLMs podem gerar respostas que parecem corretas e confiantes mas são fabricadas. Isso é especialmente perigoso quando o modelo 'preenche lacunas' misturando informação real com inferências não fundamentadas."_
+- Uma explicação de problemas de contexto: _"Além da alucinação, existem falhas ligadas ao gerenciamento de contexto: context rot (em conversas longas, informação fornecida no início é 'esquecida'), lost in the middle (informação no meio de um contexto grande é menos processada que no início ou no fim), chunk errado (o retriever traz um trecho irrelevante ou de versão errada que contamina a resposta), e context overflow (a pergunta + chunks + prompt excedem a janela do modelo, causando truncamento)."_
 
 **Tarefa:**
+
 1. Crie sua própria lista inicial de cenários de falha (sem usar IA) com ao menos 4 cenários.
 
 2. Em seguida, use o **Claude** para expandir a lista: forneça o cenário do projeto, os guardrails, e peça que identifique cenários de falha adicionais. O Claude deve gerar ao menos mais 4 cenários que você não pensou.
@@ -490,6 +529,7 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Entregável:** A lista inicial (feita sem IA), os cenários adicionais do Claude, e a lista final consolidada com evidência de qual cenário veio de qual fonte.
 
 **Critérios de avaliação:**
+
 - Os cenários são específicos ao domínio da NovaTech, não genéricos.
 - A categoria "falha de contexto" demonstra compreensão de engenharia de contexto (ex: "quando o atendente faz 5 perguntas seguidas na mesma sessão do Teams, a resposta da 5ª pergunta ignora os chunks e repete informação do histórico" — isso é context rot).
 - O participante gerou cenários próprios ANTES de usar o Claude (demonstra pensamento independente).
@@ -505,19 +545,21 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Ferramentas a utilizar:** Claude (chat) + Claude Cowork
 
 **Inputs fornecidos:**
+
 - O cenário completo.
 - A documentação completa da NovaTech para verificação (ver **Anexo A**). Use os documentos do Anexo A como fonte de verdade para avaliar se as respostas abaixo estão corretas.
 - 5 pares de pergunta/resposta gerados pelo assistente (simulados):
 
-| # | Pergunta | Resposta do Assistente | Fonte Citada |
-|---|----------|----------------------|--------------|
-| 1 | "Qual o prazo de devolução?" | "O prazo é de 7 dias úteis, exceto para cargas perigosas classes 1 a 6 da ANTT." | POL-001, seção 3.2 |
-| 2 | "Quanto custa frete para 600kg para Manaus?" | "O frete especial para cargas acima de 500kg para a região Norte tem multiplicador de 1.8 sobre o valor base." | PROC-042-v2, seção 2 |
-| 3 | "Qual o SLA do cliente Platinum?" | "O cliente Platinum tem resposta em até 1h e resolução em até 12h." | SLA-2024 |
-| 4 | "Posso devolver carga perigosa?" | "Sim, cargas perigosas podem ser devolvidas em até 7 dias úteis." | POL-001, seção 3.2 |
-| 5 | "Qual o multiplicador de frete para o Sudeste?" | "O multiplicador regional para o Sudeste é 1.1." | PROC-042-v2, seção 2 |
+| #   | Pergunta                                        | Resposta do Assistente                                                                                         | Fonte Citada         |
+| --- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------- |
+| 1   | "Qual o prazo de devolução?"                    | "O prazo é de 7 dias úteis, exceto para cargas perigosas classes 1 a 6 da ANTT."                               | POL-001, seção 3.2   |
+| 2   | "Quanto custa frete para 600kg para Manaus?"    | "O frete especial para cargas acima de 500kg para a região Norte tem multiplicador de 1.8 sobre o valor base." | PROC-042-v2, seção 2 |
+| 3   | "Qual o SLA do cliente Platinum?"               | "O cliente Platinum tem resposta em até 1h e resolução em até 12h."                                            | SLA-2024             |
+| 4   | "Posso devolver carga perigosa?"                | "Sim, cargas perigosas podem ser devolvidas em até 7 dias úteis."                                              | POL-001, seção 3.2   |
+| 5   | "Qual o multiplicador de frete para o Sudeste?" | "O multiplicador regional para o Sudeste é 1.1."                                                               | PROC-042-v2, seção 2 |
 
 **Tarefa:**
+
 1. Avalie cada resposta por conta própria primeiro: está correta, parcialmente correta ou incorreta? Justifique com base nos documentos do **Anexo A**.
 
 2. Usando o **Claude**, crie uma rubrica de avaliação com 4 dimensões (ex: precisão factual, citação de fonte, aderência aos guardrails, completude), cada uma com escala de 1-3 e descrição do que cada nível significa.
@@ -529,6 +571,7 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Entregável:** A avaliação manual (feita antes da rubrica), a rubrica gerada com o Claude, o template do Cowork, e as pontuações aplicadas.
 
 **Critérios de avaliação:**
+
 - A resposta 3 é identificada como incorreta (o tier "Platinum" não existe na tabela SLA-2024 — o assistente alucionou tanto o tier quanto os valores de SLA).
 - A resposta 4 é identificada como incorreta (cargas perigosas NÃO podem ser devolvidas, conforme a exceção explícita do POL-001).
 - A rubrica é objetiva o suficiente para que dois QAs cheguem a pontuações semelhantes.
@@ -543,16 +586,18 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Ferramentas a utilizar:** Claude (chat) + Claude Cowork
 
 **Inputs fornecidos:**
+
 - O cenário completo.
 - A documentação completa da NovaTech (ver **Anexo A**) e os chunks de referência (ver **Anexo B**). O mapa de cobertura do Anexo B (pergunta → chunks esperados) pode servir de base para os testes de retrieval.
-- Uma descrição do pipeline: *"Documentos são extraídos das fontes, convertidos em texto, divididos em chunks, transformados em embeddings, e armazenados no Azure AI Search. Quando o usuário pergunta, a pergunta é convertida em embedding, busca-se os chunks mais similares, e o LLM gera a resposta com os chunks como contexto."*
+- Uma descrição do pipeline: _"Documentos são extraídos das fontes, convertidos em texto, divididos em chunks, transformados em embeddings, e armazenados no Azure AI Search. Quando o usuário pergunta, a pergunta é convertida em embedding, busca-se os chunks mais similares, e o LLM gera a resposta com os chunks como contexto."_
 
 **Tarefa:**
+
 1. Usando o **Claude**, monte um plano de testes que cubra:
    - Testes de ingestão: como verificar que documentos foram corretamente extraídos, convertidos e indexados?
    - Testes de retrieval: dada uma pergunta conhecida, os chunks corretos são recuperados? Defina ao menos 5 pares pergunta → chunk esperado.
    - Testes de geração: dados os chunks corretos, o LLM gera resposta adequada? O que pode dar errado mesmo com os chunks certos?
-   - Testes de contexto: como verificar que o contexto montado (prompt + chunks) está dentro do orçamento? Que o efeito *lost in the middle* não afeta respostas? Que conversas longas no Teams não degradam a qualidade?
+   - Testes de contexto: como verificar que o contexto montado (prompt + chunks) está dentro do orçamento? Que o efeito _lost in the middle_ não afeta respostas? Que conversas longas no Teams não degradam a qualidade?
    - Testes de ponta a ponta: pergunta → resposta com conjunto de perguntas e respostas esperadas.
    - Testes de regressão: quando prompt muda ou documento é atualizado, quais testes rodam automaticamente?
 
@@ -561,6 +606,7 @@ Cite a fonte. Se não souber, diga que não sabe.
 **Entregável:** O plano de testes e o artefato organizado gerado pelo Cowork.
 
 **Critérios de avaliação:**
+
 - O plano testa cada etapa do pipeline separadamente E o fluxo integrado.
 - Os testes de retrieval usam perguntas realistas do contexto de logística.
 - Os testes de contexto demonstram compreensão de engenharia de contexto (context rot, orçamento, lost in the middle).
