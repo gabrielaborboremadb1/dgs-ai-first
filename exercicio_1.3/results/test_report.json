@@ -1,0 +1,382 @@
+[
+  {
+    "test_number": 1,
+    "query": "Qual o prazo de devolução?",
+    "description": "Deve retornar POL-001 com prazo de 7 dias úteis + exceções",
+    "status": "PASS",
+    "evaluation": {
+      "match": true,
+      "matched_docs": [
+        "POL-001"
+      ],
+      "missed_docs": [],
+      "unexpected_docs": [
+        "FAQ-Atendimento"
+      ],
+      "keyword_hits": [
+        "7 dias úteis",
+        "7 (sete) dias úteis",
+        "devolução"
+      ],
+      "keyword_misses": [],
+      "total_results": 5
+    },
+    "chunks_retrieved": [
+      {
+        "id": "POL-001_chunk_005",
+        "doc_id": "POL-001",
+        "section": "3.4. Devoluções parciais",
+        "score": 0.8059,
+        "preview": "[POL-001] Política de Devolução de Mercadorias — 3.4. Devoluções parciais\n\n### 3.4. Devoluções parciais\n\nQuando a entrega envolver múltiplos volumes, o cliente pode devolver volumes individuais. Cada "
+      },
+      {
+        "id": "POL-001_chunk_004",
+        "doc_id": "POL-001",
+        "section": "3.3. Procedimento de devolução",
+        "score": 0.777,
+        "preview": "[POL-001] Política de Devolução de Mercadorias — 3.3. Procedimento de devolução\n\n### 3.3. Procedimento de devolução\n\n1. O cliente abre chamado no Portal do Cliente (portal.novatech.com.br), selecionan"
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_001",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Perguntas selecionadas (das 47 do documento original)",
+        "score": 0.7544,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Perguntas selecionadas (das 47 do documento original)\n\n## Perguntas selecionadas (das 47 do documento original)\n\n### Item 3 — \"Cliente pergu"
+      },
+      {
+        "id": "POL-001_chunk_001",
+        "doc_id": "POL-001",
+        "section": "3. Regras de Devolução",
+        "score": 0.7439,
+        "preview": "[POL-001] Política de Devolução de Mercadorias — 3. Regras de Devolução\n\n## 3. Regras de Devolução\n\n### 3.1. Prazo geral\n\nO cliente pode solicitar a devolução de mercadorias em até 7 (sete) dias úteis"
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_005",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Item 41 — \"Qual a diferença entre SLA de resposta e SLA de resolução?\"",
+        "score": 0.7343,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Item 41 — \"Qual a diferença entre SLA de resposta e SLA de resolução?\"\n\n### Item 41 — \"Qual a diferença entre SLA de resposta e SLA de resol"
+      }
+    ],
+    "prompt_file": "prompt_test_1.txt",
+    "prompt_tokens_estimated": 2959
+  },
+  {
+    "test_number": 2,
+    "query": "Posso devolver carga perigosa?",
+    "description": "Deve retornar POL-001 seção 3.2 — cargas perigosas NÃO podem ser devolvidas",
+    "status": "PASS",
+    "evaluation": {
+      "match": true,
+      "matched_docs": [
+        "POL-001"
+      ],
+      "missed_docs": [],
+      "unexpected_docs": [
+        "PROC-042",
+        "FAQ-Atendimento"
+      ],
+      "keyword_hits": [
+        "carga perigosa",
+        "Gestão de Riscos"
+      ],
+      "keyword_misses": [
+        "NÃO são elegíveis",
+        "classes 1 a 6"
+      ],
+      "total_results": 5
+    },
+    "chunks_retrieved": [
+      {
+        "id": "FAQ-Atendimento_chunk_004",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Item 38 — \"Cliente quer saber a política para carga que chegou danificada.\"",
+        "score": 0.7736,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Item 38 — \"Cliente quer saber a política para carga que chegou danificada.\"\n\n### Item 38 — \"Cliente quer saber a política para carga que che"
+      },
+      {
+        "id": "POL-001_chunk_005",
+        "doc_id": "POL-001",
+        "section": "3.4. Devoluções parciais",
+        "score": 0.7426,
+        "preview": "[POL-001] Política de Devolução de Mercadorias — 3.4. Devoluções parciais\n\n### 3.4. Devoluções parciais\n\nQuando a entrega envolver múltiplos volumes, o cliente pode devolver volumes individuais. Cada "
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_002",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Item 15 — \"Cliente diz que é Platinum. Existe esse tier?\"",
+        "score": 0.7421,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Item 15 — \"Cliente diz que é Platinum. Existe esse tier?\"\n\n### Item 15 — \"Cliente diz que é Platinum. Existe esse tier?\"\nNão existe tier Pla"
+      },
+      {
+        "id": "PROC-042_chunk_002",
+        "doc_id": "PROC-042",
+        "section": "3. Prazo de entrega para frete especial",
+        "score": 0.7416,
+        "preview": "[PROC-042] Procedimento de Cálculo de Frete Especial — 3. Prazo de entrega para frete especial\n\n## 3. Prazo de entrega para frete especial\n\nO prazo de entrega para frete especial é calculado como o pr"
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_001",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Perguntas selecionadas (das 47 do documento original)",
+        "score": 0.7384,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Perguntas selecionadas (das 47 do documento original)\n\n## Perguntas selecionadas (das 47 do documento original)\n\n### Item 3 — \"Cliente pergu"
+      }
+    ],
+    "prompt_file": "prompt_test_2.txt",
+    "prompt_tokens_estimated": 3014
+  },
+  {
+    "test_number": 3,
+    "query": "Qual o SLA do cliente Gold?",
+    "description": "Deve retornar SLA-2024 com tempos Gold: resposta 2h, resolução 24h",
+    "status": "PASS",
+    "evaluation": {
+      "match": true,
+      "matched_docs": [
+        "SLA-2024"
+      ],
+      "missed_docs": [],
+      "unexpected_docs": [
+        "FAQ-Atendimento"
+      ],
+      "keyword_hits": [
+        "Gold",
+        "2h",
+        "24h",
+        "resposta"
+      ],
+      "keyword_misses": [],
+      "total_results": 5
+    },
+    "chunks_retrieved": [
+      {
+        "id": "SLA-2024_chunk_004",
+        "doc_id": "SLA-2024",
+        "section": "4. Penalidades por descumprimento",
+        "score": 0.808,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — 4. Penalidades por descumprimento\n\n## 4. Penalidades por descumprimento\n\n- Primeira violação de SLA no mês: registro interno, sem impacto contratual.\n- S"
+      },
+      {
+        "id": "SLA-2024_chunk_001",
+        "doc_id": "SLA-2024",
+        "section": "1. Classificação de clientes",
+        "score": 0.7892,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — 1. Classificação de clientes\n\n## 1. Classificação de clientes\n\nA NovaTech classifica seus clientes em 3 (três) tiers com base no volume mensal de operaçõ"
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_005",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Item 41 — \"Qual a diferença entre SLA de resposta e SLA de resolução?\"",
+        "score": 0.7771,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Item 41 — \"Qual a diferença entre SLA de resposta e SLA de resolução?\"\n\n### Item 41 — \"Qual a diferença entre SLA de resposta e SLA de resol"
+      },
+      {
+        "id": "SLA-2024_chunk_002",
+        "doc_id": "SLA-2024",
+        "section": "2. Tabela de SLAs",
+        "score": 0.7469,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — 2. Tabela de SLAs\n\n## 2. Tabela de SLAs\n\n| Métrica | Gold | Silver | Standard |\n|---------|------|--------|----------|\n| Tempo de primeira resposta (cham"
+      },
+      {
+        "id": "SLA-2024_chunk_000",
+        "doc_id": "SLA-2024",
+        "section": "Sem seção identificada",
+        "score": 0.7468,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — Sem seção identificada\n\n# SLA-2024 — Tabela de SLA por Tipo de Cliente\n\n**Versão:** 2024.1\n**Última atualização:** 02/01/2024\n**Responsável:** Diretoria "
+      }
+    ],
+    "prompt_file": "prompt_test_3.txt",
+    "prompt_tokens_estimated": 2958
+  },
+  {
+    "test_number": 4,
+    "query": "Qual o SLA do cliente Platinum?",
+    "description": "Deve retornar SLA-2024-A dizendo que só existem 3 tiers (Gold/Silver/Standard)",
+    "status": "PASS",
+    "evaluation": {
+      "match": true,
+      "matched_docs": [
+        "SLA-2024"
+      ],
+      "missed_docs": [],
+      "unexpected_docs": [
+        "FAQ-Atendimento"
+      ],
+      "keyword_hits": [
+        "3 (três) tiers",
+        "Gold, Silver e Standard",
+        "não existem outros tiers",
+        "Não existe tier Platinum"
+      ],
+      "keyword_misses": [],
+      "total_results": 5
+    },
+    "chunks_retrieved": [
+      {
+        "id": "SLA-2024_chunk_001",
+        "doc_id": "SLA-2024",
+        "section": "1. Classificação de clientes",
+        "score": 0.7756,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — 1. Classificação de clientes\n\n## 1. Classificação de clientes\n\nA NovaTech classifica seus clientes em 3 (três) tiers com base no volume mensal de operaçõ"
+      },
+      {
+        "id": "SLA-2024_chunk_000",
+        "doc_id": "SLA-2024",
+        "section": "Sem seção identificada",
+        "score": 0.7645,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — Sem seção identificada\n\n# SLA-2024 — Tabela de SLA por Tipo de Cliente\n\n**Versão:** 2024.1\n**Última atualização:** 02/01/2024\n**Responsável:** Diretoria "
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_002",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Item 15 — \"Cliente diz que é Platinum. Existe esse tier?\"",
+        "score": 0.7611,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Item 15 — \"Cliente diz que é Platinum. Existe esse tier?\"\n\n### Item 15 — \"Cliente diz que é Platinum. Existe esse tier?\"\nNão existe tier Pla"
+      },
+      {
+        "id": "SLA-2024_chunk_004",
+        "doc_id": "SLA-2024",
+        "section": "4. Penalidades por descumprimento",
+        "score": 0.7596,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — 4. Penalidades por descumprimento\n\n## 4. Penalidades por descumprimento\n\n- Primeira violação de SLA no mês: registro interno, sem impacto contratual.\n- S"
+      },
+      {
+        "id": "SLA-2024_chunk_002",
+        "doc_id": "SLA-2024",
+        "section": "2. Tabela de SLAs",
+        "score": 0.7582,
+        "preview": "[SLA-2024] Tabela de SLA por Tipo de Cliente — 2. Tabela de SLAs\n\n## 2. Tabela de SLAs\n\n| Métrica | Gold | Silver | Standard |\n|---------|------|--------|----------|\n| Tempo de primeira resposta (cham"
+      }
+    ],
+    "prompt_file": "prompt_test_4.txt",
+    "prompt_tokens_estimated": 2943
+  },
+  {
+    "test_number": 5,
+    "query": "Frete para 600kg para Manaus?",
+    "description": "Deve retornar PROC-042-v2 com multiplicador Norte = 1.8",
+    "status": "PASS",
+    "evaluation": {
+      "match": true,
+      "matched_docs": [
+        "PROC-042-v2"
+      ],
+      "missed_docs": [],
+      "unexpected_docs": [
+        "PROC-042"
+      ],
+      "keyword_hits": [
+        "1.8",
+        "Norte",
+        "500kg",
+        "multiplicador"
+      ],
+      "keyword_misses": [],
+      "total_results": 5
+    },
+    "chunks_retrieved": [
+      {
+        "id": "PROC-042_chunk_002",
+        "doc_id": "PROC-042",
+        "section": "3. Prazo de entrega para frete especial",
+        "score": 0.7355,
+        "preview": "[PROC-042] Procedimento de Cálculo de Frete Especial — 3. Prazo de entrega para frete especial\n\n## 3. Prazo de entrega para frete especial\n\nO prazo de entrega para frete especial é calculado como o pr"
+      },
+      {
+        "id": "PROC-042-v2_chunk_001",
+        "doc_id": "PROC-042-v2",
+        "section": "2. Fórmula de cálculo",
+        "score": 0.7238,
+        "preview": "[PROC-042-v2] Procedimento de Cálculo de Frete Especial (Revisado) — 2. Fórmula de cálculo\n\n## 2. Fórmula de cálculo\n\nO frete especial é calculado como:\n\nValor do frete = Valor base × Multiplicador re"
+      },
+      {
+        "id": "PROC-042_chunk_001",
+        "doc_id": "PROC-042",
+        "section": "1. Objetivo",
+        "score": 0.7225,
+        "preview": "[PROC-042] Procedimento de Cálculo de Frete Especial — 1. Objetivo\n\n## 1. Objetivo\n\nDefinir a fórmula e os parâmetros para cálculo de frete especial aplicável a cargas com peso acima de 500kg.\n\n## 2. "
+      },
+      {
+        "id": "PROC-042_chunk_000",
+        "doc_id": "PROC-042",
+        "section": "1. Objetivo",
+        "score": 0.7188,
+        "preview": "[PROC-042] Procedimento de Cálculo de Frete Especial — 1. Objetivo\n\n# PROC-042 — Procedimento de Cálculo de Frete Especial\n\n**Versão:** 1.0\n**Data de emissão:** 03/03/2023\n**Responsável:** Diretoria C"
+      },
+      {
+        "id": "PROC-042-v2_chunk_000",
+        "doc_id": "PROC-042-v2",
+        "section": "1. Objetivo",
+        "score": 0.7173,
+        "preview": "[PROC-042-v2] Procedimento de Cálculo de Frete Especial (Revisado) — 1. Objetivo\n\n# PROC-042-v2 — Procedimento de Cálculo de Frete Especial (Revisado)\n\n**Versão:** 2.0\n**Data de emissão:** 10/11/2023\n"
+      }
+    ],
+    "prompt_file": "prompt_test_5.txt",
+    "prompt_tokens_estimated": 2848
+  },
+  {
+    "test_number": 6,
+    "query": "Qual o multiplicador de frete para o Sudeste?",
+    "description": "Deve retornar PROC-042-v2 com multiplicador Sudeste = 1.1 (risco: v1 diz 1.0)",
+    "status": "FAIL",
+    "evaluation": {
+      "match": false,
+      "matched_docs": [],
+      "missed_docs": [
+        "PROC-042-v2"
+      ],
+      "unexpected_docs": [
+        "PROC-042",
+        "POL-001",
+        "FAQ-Atendimento"
+      ],
+      "keyword_hits": [
+        "Sudeste"
+      ],
+      "keyword_misses": [
+        "1.1"
+      ],
+      "total_results": 5
+    },
+    "chunks_retrieved": [
+      {
+        "id": "FAQ-Atendimento_chunk_001",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Perguntas selecionadas (das 47 do documento original)",
+        "score": 0.7489,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Perguntas selecionadas (das 47 do documento original)\n\n## Perguntas selecionadas (das 47 do documento original)\n\n### Item 3 — \"Cliente pergu"
+      },
+      {
+        "id": "POL-001_chunk_005",
+        "doc_id": "POL-001",
+        "section": "3.4. Devoluções parciais",
+        "score": 0.7344,
+        "preview": "[POL-001] Política de Devolução de Mercadorias — 3.4. Devoluções parciais\n\n### 3.4. Devoluções parciais\n\nQuando a entrega envolver múltiplos volumes, o cliente pode devolver volumes individuais. Cada "
+      },
+      {
+        "id": "PROC-042_chunk_001",
+        "doc_id": "PROC-042",
+        "section": "1. Objetivo",
+        "score": 0.7217,
+        "preview": "[PROC-042] Procedimento de Cálculo de Frete Especial — 1. Objetivo\n\n## 1. Objetivo\n\nDefinir a fórmula e os parâmetros para cálculo de frete especial aplicável a cargas com peso acima de 500kg.\n\n## 2. "
+      },
+      {
+        "id": "POL-001_chunk_004",
+        "doc_id": "POL-001",
+        "section": "3.3. Procedimento de devolução",
+        "score": 0.72,
+        "preview": "[POL-001] Política de Devolução de Mercadorias — 3.3. Procedimento de devolução\n\n### 3.3. Procedimento de devolução\n\n1. O cliente abre chamado no Portal do Cliente (portal.novatech.com.br), selecionan"
+      },
+      {
+        "id": "FAQ-Atendimento_chunk_000",
+        "doc_id": "FAQ-Atendimento",
+        "section": "Sem seção identificada",
+        "score": 0.7195,
+        "preview": "[FAQ-Atendimento] Perguntas Frequentes do Time de Suporte — Sem seção identificada\n\n# FAQ-Atendimento — Perguntas Frequentes do Time de Suporte\n\n**Versão:** Não controlada\n**Última atualização:** Dive"
+      }
+    ],
+    "prompt_file": "prompt_test_6.txt",
+    "prompt_tokens_estimated": 3016
+  }
+]
