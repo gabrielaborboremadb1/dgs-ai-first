@@ -11,3 +11,4 @@ com os supervisores sugerindo a forma de fazer a conta do frete total, após obt
 com lost in the middle.
 - Precisa testar o comportamento do assistente com informações conflitantes
 - Testar o comportamento com uma conversa mais longa passando o histórico da conversa
+- Ataques de prompt injection
