@@ -1,0 +1,55 @@
+{
+	"servers": {
+		"novatech-repo": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem",
+				"./src",
+				"./specs",
+				"./skills",
+				"./prompts",
+				"./tests",
+				"./docs/adr",
+				"./docs/runbooks"
+			],
+			"type": "stdio"
+		},
+		"novatech-docs": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem",
+				"./docs/novatech",
+				"./data/retrieval-corpus"
+			],
+			"type": "stdio"
+		},
+		"novatech-git": {
+			"command": "uvx",
+			"args": [
+				"mcp-server-git",
+				"--repository",
+				"."
+			],
+			"type": "stdio"
+		},
+		"novatech-memory": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-memory"
+			],
+			"type": "stdio"
+		},
+		"novatech-everything": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-everything"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": []
+}
